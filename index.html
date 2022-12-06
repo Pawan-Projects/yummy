@@ -16,6 +16,439 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="/Css/Style.Css" />
+
+    <style>
+        
+    .logo {
+        font-weight: 700;
+        font-size: 2rem;
+
+    }
+
+    .logo h1 {
+        padding: 0px;
+    }
+
+    .navbar-links {
+        margin: 4px;
+    }
+
+    .navbar-links::after {
+
+        display: block;
+        content: '';
+        border-bottom: solid 3px #ff0909;
+        transform: scaleX(0);
+        transition: transform 250ms ease-in-out;
+    }
+
+    .navbar-links:hover:after {
+        transform: scaleX(1);
+    }
+
+    .navbar-items .active::after {
+        display: block;
+        content: '';
+        border-bottom: solid 3px #fd0000;
+        transform: scaleX(1);
+    }
+
+    .navbar-links:after {
+        transform-origin: 0% 50%;
+    }
+
+    .heading {
+        font-family: "Amatic SC", cursive;
+        font-size: 64px;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    .about-image {
+        background-image: url("../Images/about.jpg");
+        min-height: 700px;
+        position: relative;
+        margin: 0;
+        padding: 0;
+    }
+
+    .about-image-inside {
+        position: absolute;
+        width: 75%;
+        bottom: 10%;
+    }
+
+
+
+    li {
+        position: relative;
+        list-style: none;
+    }
+
+    .bi-check2-all::before {
+        content: "\f26f";
+        display: inline-block;
+        font-style: normal;
+        font-weight: normal !important;
+        line-height: 2;
+        position: absolute;
+        font-size: 20px;
+        left: -30px;
+        color: red;
+
+    }
+
+    .player {
+        background: none;
+        width: 100px;
+        height: 100px;
+        border: solid 5px red;
+        border-radius: 100%;
+        position: absolute;
+        top: 40%;
+        left: 40%;
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+        transform: scale(1);
+        animation: pulse 2s infinite;
+    }
+
+    .card-div {
+        min-height: 500px;
+    }
+
+    .player span {
+        width: 0;
+        height: 0;
+        border-top: 30px solid transparent;
+        border-left: 40px solid rgb(252, 0, 0);
+        border-bottom: 30px solid transparent;
+        position: absolute;
+        top: 18%;
+        left: 36%;
+    }
+
+    .aboutpart2 {
+        background-color: #eee;
+
+    }
+
+    .learnmore {
+        background-color: rgba(129, 12, 12, 0.482);
+    }
+
+    .img-div {
+        padding: 10px;
+        margin: 25px auto;
+        border-radius: 50%;
+        width: 75px;
+        background-color: rgba(206, 18, 18, 0.1);
+    }
+
+
+    .icon-div2 {
+        padding: 10px;
+        margin: 25px auto;
+        border-radius: 50%;
+        width: 75px;
+        background-color: rgb(169, 0, 0);
+    }
+
+    .cardcolor {
+
+        height: 320px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        transition: transform 0.2s;
+        margin: auto;
+    }
+
+    .cardcolor:hover {
+        transform: scale(1.1);
+    }
+
+    .detailbackground {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.629), rgba(0, 0, 0, 0.5)), url(/Images/jimmy-dean-Yn0l7uwBrpw-unsplash.jpg);
+        height: 350px;
+        background-attachment: fixed;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .blockquote-last {
+        display: inline-block;
+        transform: scale(-1, 1);
+        /* transform: rotateX(180deg); */
+    }
+
+    .gallery {
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+        position: relative;
+
+    }
+
+    .swiper {
+        width: 100%;
+        height: 100%;
+    }
+
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+
+    .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 550px;
+        object-fit: cover;
+        filter: brightness(35%);
+
+    }
+
+    .bullets.swiper-pagination-horizontal,
+    .swiper-pagination-custom,
+    .swiper-pagination-fraction {
+        bottom: 20px;
+        left: 0;
+
+    }
+
+    .swiper-pagination {
+        position: absolute;
+        text-align: center;
+        transition: .3s opacity;
+        transform: translate3d(0, 0, 0);
+        margin-bottom: -4rem;
+        z-index: 10;
+
+    }
+
+    .swiper-pagination-bullet {
+        width: 15px;
+        height: 15px;
+        display: inline-block;
+        border-radius: 50%;
+        background: red;
+
+    }
+
+    .gallery-text {
+        position: absolute;
+        z-index: 1;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        text-align: start;
+        align-content: end;
+        bottom: 2%;
+        left: 4%;
+    }
+
+    .card-shef::after {
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        background: url(/Images/wave.svg) no-repeat center bottom;
+        background-size: contain;
+        z-index: 1;
+    }
+
+    .social a {
+        color: rgb(130, 130, 130);
+        padding: 10px;
+    }
+
+    .social a :hover {
+        color: rgb(43, 43, 43);
+    }
+
+    .social {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        font-size: 20PX;
+        border-radius: 4px;
+        background: rgba(228, 228, 228, 0.204);
+        z-index: 2;
+        top: 25px;
+        right: -100px;
+        transition: 0.3s translate;
+        translate: 100px;
+    }
+
+    .chefcard {
+        overflow: hidden;
+        text-align: center;
+        border-radius: 5px;
+        background: #fff;
+        box-shadow: 0px 0 30px rgb(55 55 63 / 8%);
+        transition: 0.3s transform;
+        transform: scale(0.95)
+    }
+
+    .chefcard:hover {
+        transform: scale(1.01);
+
+    }
+
+    .chefcard:hover .social {
+        translate: 0px;
+        right: 10px;
+        top: 40px;
+    }
+
+    .formimage {
+        background-image: url(/Images/reservation.jpg);
+        background-size: cover;
+        height: 570px;
+
+    }
+
+    .hero {
+        padding: 150px 0px 30px 0px;
+        background-size: cover;
+        width: 100%;
+    }
+
+    .carousel-indicators {
+        margin-bottom: -3rem;
+    }
+
+    .carousel-indicators [data-bs-target] {
+        box-sizing: content-box;
+        flex: 0 1 auto;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        padding: 0;
+        margin-right: 4px;
+        margin-left: 4px;
+        text-indent: -999px;
+        cursor: pointer;
+        background-color: rgba(173, 173, 173, 0.607);
+        background-clip: padding-box;
+        border: 0;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        opacity: .5;
+        transition: opacity .6s ease;
+    }
+
+    .carousel-indicators .active {
+        background-color: rgba(255, 0, 0, 0.515);
+        opacity: 1;
+    }
+
+    .form-control {
+        padding: 0.700rem 0.75rem;
+    }
+
+    .menu-link {
+        display: inline-block;
+        text-decoration: underline;
+        text-underline-offset: 10px;
+        color: gray;
+    }
+
+    .nav-tabs .nav-link.active {
+        color: rgb(219, 3, 3);
+    }
+
+    .nav-tabs .nav-link:hover {
+        color: rgb(219, 3, 3);
+    }
+    .dropdown-menu li {
+position: relative;
+}
+.dropdown-menu .dropdown-submenu {
+display: none;
+position: absolute;
+left: 100%;
+top: -7px;
+}
+.dropdown-menu .dropdown-submenu-left {
+right: 100%;
+left: auto;
+}
+.dropdown-menu > li:hover > .dropdown-submenu {
+display: block;
+}
+.menu-images{
+    transform: scale(0.9);
+ 
+}
+.menu-images:hover{
+    transform: scale(1);
+    transition: all 0.5s;
+}
+.img-fluid{
+    animation: animName 10s linear infinite;
+}
+
+@keyframes animName {
+ 0%{
+    transform: rotate(0deg);
+   }
+100%{
+    transform: rotate(360deg);
+   }
+}
+
+.sign {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center
+}
+
+.sign span {
+    height: 30px;
+    width: 30px;
+    background-color: black;
+    display: flex;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 12px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer
+}
+
+.sign small {
+    font-weight: 700;
+    margin-top: -14px;
+    margin-right: 4px;
+    height: 2px;
+    width: 2px
+}
+
+.sign span i {
+    margin-top: 5px
+}
+    </style>
 </head>
 
 
